@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MusicApp/MusicApp.vcxproj" Id="59307c9a-3b86-408c-9240-caf9a32dc9c2" />
+</Solution>
