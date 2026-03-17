@@ -1,7 +1,7 @@
 #include "Option.h"
 
 namespace Opt {
-	Option::Option(std::string s, Func f) {
+	Option::Option(std::string s, std::function<int()> f) {
 		name = s;
 		func = f;
 	}

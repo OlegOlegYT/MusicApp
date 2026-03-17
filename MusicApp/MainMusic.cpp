@@ -14,35 +14,28 @@ using namespace Li;
 using namespace Au;
 using namespace Lg;
 
-int f1() {
-	return 1;
-}
-
 int main(){
 	vector<Author> authors;
 	vector<Listener> listeners;
-	Author* author;
-	Listener* listener;
+	int idxA = -1;
+	int idxL = -1;
 
+	LogIn l(&authors, &listeners, &idxA, &idxL);
 
-
-	
-	LogIn l(&authors, &listeners);
-
-
-
-
-	Option O = Option("Name", l.LoggingAuthor());
-
-	Option LoginOptions[3] = { Option{"Author", l.LoggingAuthor()}, Option{"Listener", l.LoggingListener()}, Option{"Quit", l.Quit()}};
+	Option LoginOptions[3] = { Option{"Author", [&l]() {return l.LoggingAuthor(); }}, Option{"Listener", [&l]() {return l.LoggingListener(); } }, Option{"Quit", [&l]() {return l.Quit(); } } };
 	Menu m("Log In", LoginOptions, 3);
 	l.LoginMenu = &m;
 
 	while (m.IsRunning()) {
+		
 
+
+
+		idxA = -1; //обязательно в конце обновить Логин Меню
+		idxL = -1;
+		l = LogIn(&authors, &listeners, &idxA, &idxL); 
+		m = Menu("Log In", LoginOptions, 3);
+		l.LoginMenu = &m;
 	}
-
-
-	//Author A = Author();
 	return 0;
 }

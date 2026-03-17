@@ -4,10 +4,8 @@
 
 namespace Men {
 	class Menu {
-	private:
-		std::string MenuName;
-
 	public:
+		std::string MenuName;
 		Opt::Option* options;
 		int colvo;
 		Menu(std::string, Opt::Option*, int);

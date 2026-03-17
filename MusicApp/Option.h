@@ -1,15 +1,14 @@
 #pragma once
 #include <string>
-#include <cstddef>
+#include <functional>
 
 
 namespace Opt {
 	class Option {
 	public:
 		std::string name;
-		typedef int(*Func)();
-		Func func;
-		Option(std::string, Func);
+		std::function<int()> func;
+		Option(std::string, std::function<int()>);
 		int Run();
 	};
 }

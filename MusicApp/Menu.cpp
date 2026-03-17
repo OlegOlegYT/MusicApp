@@ -11,7 +11,7 @@ namespace Men {
 	int Menu::IsRunning() {
 		std::cout << MenuName << '\n';
 		for (int i = 0; i < colvo; i++) 
-			std::cout << i << '\t' << options[i].name << '\n';
+			std::cout << (i + 1) << '\t' << options[i].name << '\n';
 		std::cout << "Enter option: \t";
 		int a;
 		std::cin >> a;
